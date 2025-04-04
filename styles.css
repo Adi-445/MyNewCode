@@ -1,74 +1,110 @@
-body{
+/* styles.css */
+body {
     box-sizing: border-box;
-    width: auto;
-    height: auto;
-    padding: 0px;
-    margin: 0px;
-  }
-  
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    line-height: 1.6;
+}
 
-
-
-
- 
 #B {
-    background-color: blue;
-    width: auto;
-    height: auto;
-    padding: 35px;  
+    background-color: #2196F3; /* Slightly muted blue */
+    padding: 2rem;
     text-align: center;
-    border:thick solid blue;
-
-
-
+    border: 4px solid #1976D2;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 nav {
-    background-color: lightcoral;
-    width: auto;
-    height: auto;
-    padding: 35px;  
-    text-align: left;
-    border:thick solid lightcoral
-
-}
-section {
-    float: left;
-    background-color: red;
-    width: 100%;
-    height: auto;
-    padding:  35px;  
-    text-align: left;
-
+    background-color: #FF8A80; /* Softer coral */
+    padding: 1.5rem;
+    margin: 1rem;
+    border: 4px solid #FF5252;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-article {
-    float: left;
-    background-color: lightblue;
-    width: 100%;
-    height: auto;
-    padding: 35px;  
-    text-align: left;
-
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
 }
 
-
-#passwordInput {
-    padding: 8px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-#submitButton {
-    padding: 8px 15px;
+.menu button {
     background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    border: 2px solid #388E3C;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-#submitButton:hover {
-    background-color: #45a049;
+.menu button:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
 
+section {
+    background-color: #FF5252; /* Brighter red */
+    padding: 2rem;
+    margin: 1rem;
+    border: 4px solid #D32F2F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+pre {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    position: relative;
+}
+
+/* Add some interactive elements */
+pre::after {
+    content: "🔒 Under Construction";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: #FFC107;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transform: rotate(5deg);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#secret-button {
+    margin-top: 1rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+    }
+    
+    #B, nav, section {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    pre::after {
+        display: none;
+    }
 }
